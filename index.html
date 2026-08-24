@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Siri ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+
+    <!-- ============================= -->
+    <!-- PAGE 1 : PASSWORD -->
+    <!-- ============================= -->
+
+    <section id="page1" class="page password-page">
+
+        <div class="floating-hearts">
+
+            <span>❤️</span>
+            <span>💕</span>
+            <span>💗</span>
+            <span>💖</span>
+            <span>💝</span>
+            <span>💗</span>
+
+        </div>
+
+        <div class="password-card">
+
+            <div class="lock">
+                🔐
+            </div>
+
+            <h1>
+                Hey Siri... 💗
+            </h1>
+
+            <p class="subtitle">
+                A little surprise has been prepared
+                especially for you.
+            </p>
+
+            <p class="hint">
+                💡 Hint: Enter your special birthday date
+            </p>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="DD-MM-YYYY"
+                maxlength="10"
+            >
+
+            <button
+                class="main-btn"
+                onclick="checkPassword()"
+            >
+                Unlock My Surprise 💝
+            </button>
+
+            <p id="error"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PAGE 2 : BIRTHDAY -->
+    <!-- ============================= -->
+
+    <section
+        id="page2"
+        class="page birthday-page hidden"
+    >
+
+        <div id="confetti"></div>
+
+        <div class="balloon b1">🎈</div>
+        <div class="balloon b2">🎈</div>
+        <div class="balloon b3">🎈</div>
+        <div class="balloon b4">🎈</div>
+
+        <div class="birthday-content">
+
+            <p class="top-text">
+                Today is all about one very special person...
+            </p>
+
+            <h1 class="birthday-title">
+                HAPPY
+                <br>
+                BIRTHDAY
+            </h1>
+
+            <h2>
+                SIRI ❤️
+            </h2>
+
+            <div class="photo-frame">
+
+                <img
+                    src="assets/siri.jpeg"
+                    alt="Siri"
+                >
+
+            </div>
+
+            <p class="birthday-text">
+                🎂 May your day be filled with happiness,
+                laughter and beautiful memories. 🎂
+            </p>
+
+            <button
+                class="main-btn"
+                onclick="nextPage(3)"
+            >
+                There's More For You 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PAGE 3 : LETTER -->
+    <!-- ============================= -->
+
+    <section
+        id="page3"
+        class="page letter-page hidden"
+    >
+
+        <div class="letter-card">
+
+            <div class="envelope">
+                💌
+            </div>
+
+            <h1>
+                A Little Letter For You
+            </h1>
+
+            <div
+                id="typingText"
+                class="letter-text"
+            ></div>
+
+            <button
+                id="letterButton"
+                class="main-btn hidden"
+                onclick="nextPage(4)"
+            >
+                Walk Down Memory Lane 📸
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PAGE 4 : 10 MEMORIES -->
+    <!-- ============================= -->
+
+    <section
+        id="page4"
+        class="page memory-page hidden"
+    >
+
+        <div class="memory-container">
+
+            <p class="section-small">
+                Every picture has a story... ❤️
+            </p>
+
+            <h1>
+                📸 Our Memory Lane
+            </h1>
+
+            <p class="memory-intro">
+                Ten little memories, countless laughs,
+                and one beautiful friendship.
+            </p>
+
+
+            <div class="gallery">
+
+
+                <!-- MEMORY 1 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory1.jpeg"
+                        alt="Memory 1"
+                    >
+
+                    <div class="memory-number">
+                        01
+                    </div>
+
+                    <h3>
+                        The Beginning 🌸
+                    </h3>
+
+                    <p>
+                        Every beautiful friendship has
+                        a beginning, and this is one
+                        chapter worth remembering.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 2 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory2.jpeg"
+                        alt="Memory 2"
+                    >
+
+                    <div class="memory-number">
+                        02
+                    </div>
+
+                    <h3>
+                        The Crazy Moments 😂
+                    </h3>
+
+                    <p>
+                        The moments that made absolutely
+                        no sense, but somehow became
+                        our favorite memories.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 3 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory3.jpeg"
+                        alt="Memory 3"
+                    >
+
+                    <div class="memory-number">
+                        03
+                    </div>
+
+                    <h3>
+                        The Unforgettable Days ❤️
+                    </h3>
+
+                    <p>
+                        Some days pass quickly, but
+                        the memories stay with us forever.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 4 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory4.jpeg"
+                        alt="Memory 4"
+                    >
+
+                    <div class="memory-number">
+                        04
+                    </div>
+
+                    <h3>
+                        The Laughs 😂
+                    </h3>
+
+                    <p>
+                        Those moments when we laughed
+                        so much that nothing else mattered.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 5 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory5.jpeg"
+                        alt="Memory 5"
+                    >
+
+                    <div class="memory-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Random Adventures 🌈
+                    </h3>
+
+                    <p>
+                        The random plans, unexpected
+                        moments, and little adventures
+                        that became memories.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 6 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory6.jpeg"
+                        alt="Memory 6"
+                    >
+
+                    <div class="memory-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Good Times ✨
+                    </h3>
+
+                    <p>
+                        Some moments are simple,
+                        but being together makes
+                        them special.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 7 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory7.jpeg"
+                        alt="Memory 7"
+                    >
+
+                    <div class="memory-number">
+                        07
+                    </div>
+
+                    <h3>
+                        The Silly Ones 🤪
+                    </h3>
+
+                    <p>
+                        Life would be boring without
+                        our completely random and
+                        silly moments.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 8 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory8.jpeg"
+                        alt="Memory 8"
+                    >
+
+                    <div class="memory-number">
+                        08
+                    </div>
+
+                    <h3>
+                        Always There 🤝
+                    </h3>
+
+                    <p>
+                        Through good days and difficult
+                        days, friendship means being
+                        there for each other.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 9 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory9.jpeg"
+                        alt="Memory 9"
+                    >
+
+                    <div class="memory-number">
+                        09
+                    </div>
+
+                    <h3>
+                        Beautiful Memories 💗
+                    </h3>
+
+                    <p>
+                        Looking back at these moments
+                        always brings a smile to my face.
+                    </p>
+
+                </div>
+
+
+                <!-- MEMORY 10 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="assets/memory10.jpeg"
+                        alt="Memory 10"
+                    >
+
+                    <div class="memory-number">
+                        10
+                    </div>
+
+                    <h3>
+                        To Many More... 🫶
+                    </h3>
+
+                    <p>
+                        Ten memories today, but hopefully
+                        hundreds more waiting for us
+                        in the future.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="memory-ending">
+
+                <p>
+                    "The best thing about memories
+                    is making them." ❤️
+                </p>
+
+            </div>
+
+
+            <button
+                class="main-btn"
+                onclick="nextPage(5)"
+            >
+                Why You're Special 🌷
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PAGE 5 : WHY SPECIAL -->
+    <!-- ============================= -->
+
+    <section
+        id="page5"
+        class="page special-page hidden"
+    >
+
+        <div class="special-container">
+
+            <p class="section-small">
+                There are many reasons...
+            </p>
+
+            <h1>
+                🌷 Why Siri Is Special
+            </h1>
+
+            <p>
+                Tap the cards to discover them.
+            </p>
+
+
+            <div class="reason-grid">
+
+
+                <div
+                    class="reason-card"
+                    onclick="flipCard(this)"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            😊
+                            <span>
+                                Your Smile
+                            </span>
+                        </div>
+
+                        <div class="card-back">
+                            Your smile can make
+                            even an ordinary day
+                            feel better.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reason-card"
+                    onclick="flipCard(this)"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            💗
+                            <span>
+                                Your Heart
+                            </span>
+                        </div>
+
+                        <div class="card-back">
+                            Your kindness and
+                            caring nature make
+                            you truly special.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reason-card"
+                    onclick="flipCard(this)"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            😂
+                            <span>
+                                Your Craziness
+                            </span>
+                        </div>
+
+                        <div class="card-back">
+                            Life would definitely
+                            be less fun without
+                            your craziness.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reason-card"
+                    onclick="flipCard(this)"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            🤝
+                            <span>
+                                Your Support
+                            </span>
+                        </div>
+
+                        <div class="card-back">
+                            Thank you for being there
+                            through the good and bad
+                            moments.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reason-card"
+                    onclick="flipCard(this)"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            🫶
+                            <span>
+                                Our Friendship
+                            </span>
+                        </div>
+
+                        <div class="card-back">
+                            Some friendships become
+                            memories we carry forever.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reason-card"
+                    onclick="flipCard(this)"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+                            ✨
+                            <span>
+                                Simply You
+                            </span>
+                        </div>
+
+                        <div class="card-back">
+                            You don't have to be anyone
+                            else. Just being you is enough.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="main-btn"
+                onclick="nextPage(6)"
+            >
+                One Last Surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PAGE 6 : GIFT -->
+    <!-- ============================= -->
+
+    <section
+        id="page6"
+        class="page gift-page hidden"
+    >
+
+        <div class="gift-container">
+
+            <p class="section-small">
+                I saved something special for the end...
+            </p>
+
+            <h1>
+                🎁 A Gift For You
+            </h1>
+
+            <p>
+                Click the gift box.
+            </p>
+
+
+            <div
+                id="giftBox"
+                class="gift-box"
+                onclick="openGift()"
+            >
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-body">
+
+                    <div class="gift-ribbon"></div>
+
+                </div>
+
+            </div>
+
+
+            <p id="giftHint">
+                Tap me 🎁
+            </p>
+
+
+            <button
+                id="finalButton"
+                class="main-btn hidden"
+                onclick="nextPage(7)"
+            >
+                Open The Final Message ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PAGE 7 : FINAL -->
+    <!-- ============================= -->
+
+    <section
+        id="page7"
+        class="page final-page hidden"
+    >
+
+        <div id="fireworks"></div>
+
+        <div class="final-content">
+
+            <div class="moon">
+                🌙
+            </div>
+
+            <h1>
+                HAPPY BIRTHDAY
+            </h1>
+
+            <h2>
+                SIRI ❤️
+            </h2>
+
+
+            <div class="final-photo">
+
+                <img
+                    src="assets/siri.jpeg"
+                    alt="Siri"
+                >
+
+            </div>
+
+
+            <p>
+                May this new chapter of your life
+                bring you countless reasons to smile.
+            </p>
+
+
+            <p>
+                May you achieve the dreams you're
+                working for, meet wonderful people,
+                create beautiful memories, and always
+                have something to look forward to.
+            </p>
+
+
+            <p class="final-message">
+                No matter where life takes us,
+                I hope our friendship always remains
+                one of my favorite chapters. ❤️
+            </p>
+
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+
+            <h3>
+                Here's to many more memories together. 🥂
+            </h3>
+<div class="special-birthday-message">
+
+    <p>
+        Andaru ninnu silent anukuntunnaru... 😌
+        <br>
+        but okkasari nee pakkana kurchunte telustadhi
+        nuvvu entha <b>violent</b> anedhi! 😂
+    </p>
+
+    <p>
+        <b>Tension ki brand ambassador</b> nuvvu! 😭😂
+    </p>
+
+    <p>
+        Ippatikaina koncham tension padadam maneyyi! 😜
+    </p>
+
+    <p>
+        Job vachinandhuku elago party ivvaledhu... 👀
+        <br>
+        atleast birthday ki ayina istava ledha? 😂🎂
+    </p>
+
+    <p>
+        Just kidding gani... ❤️
+    </p>
+
+    <p class="special-ending">
+        Enjoy your special day, Siri! 🥳💗
+        <br>
+        <b>Happy Birthday! 🎂🎉❤️</b>
+    </p>
+
+</div>
+
+            <p class="signature">
+                With lots of love & friendship 💗
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+    <audio
+        id="birthdayMusic"
+        loop
+    >
+
+        <source
+            src="assets/birthday.mp4"
+            type="video/mp4"
+        >
+
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>

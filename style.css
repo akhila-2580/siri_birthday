@@ -1,0 +1,1432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    overflow-x: hidden;
+    color: #444;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#musicBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+#musicBtn:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+
+/* =========================
+   COMMON BUTTON
+========================= */
+
+.main-btn {
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff4d6d, #d63384);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+    transition: 0.3s;
+    margin-top: 25px;
+}
+
+.main-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(214, 51, 132, 0.4);
+}
+
+
+/* =========================
+   PAGE 1 - PASSWORD
+========================= */
+
+.password-page {
+    background:
+        radial-gradient(circle at 20% 20%, #ffd6e5, transparent 30%),
+        radial-gradient(circle at 80% 80%, #e7c6ff, transparent 30%),
+        linear-gradient(135deg, #fff0f5, #f7e8ff);
+}
+
+.password-card {
+    width: min(90%, 450px);
+    padding: 45px 35px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(100, 50, 100, 0.15);
+    position: relative;
+    z-index: 5;
+    animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.lock {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: lockFloat 2s ease-in-out infinite;
+}
+
+@keyframes lockFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.password-card h1 {
+    color: #d63384;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #666;
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+.hint {
+    margin: 20px 0;
+    color: #9c4dcc;
+    font-size: 14px;
+}
+
+#password {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #f0c5dc;
+    border-radius: 15px;
+    outline: none;
+    font-size: 17px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#password:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 15px rgba(214, 51, 132, 0.15);
+}
+
+#error {
+    color: #e63946;
+    margin-top: 15px;
+    min-height: 20px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-hearts span {
+    position: absolute;
+    font-size: 25px;
+    animation: heartFloat 7s linear infinite;
+    opacity: 0.7;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    bottom: -30px;
+    animation-delay: 0s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    bottom: -30px;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 40%;
+    bottom: -30px;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 60%;
+    bottom: -30px;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 75%;
+    bottom: -30px;
+    animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 90%;
+    bottom: -30px;
+    animation-delay: 5s;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   PAGE 2 - BIRTHDAY
+========================= */
+
+.birthday-page {
+    background:
+        radial-gradient(circle at center, #fff5fa, #ffd9e8 45%, #e8c7ff);
+    text-align: center;
+}
+
+.birthday-content {
+    position: relative;
+    z-index: 5;
+    padding: 40px 20px;
+}
+
+.top-text {
+    color: #9b4dca;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.birthday-title {
+    font-size: clamp(55px, 10vw, 110px);
+    line-height: 0.85;
+    color: #d63384;
+    text-shadow: 4px 4px 0 #ffd1e2;
+    animation: birthdayPop 1.2s ease;
+}
+
+@keyframes birthdayPop {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.birthday-content h2 {
+    font-size: 45px;
+    margin: 20px 0;
+    color: #8e2de2;
+}
+
+.photo-frame {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4d6d, #8e2de2);
+    box-shadow: 0 20px 45px rgba(142, 45, 226, 0.25);
+    animation: photoFloat 3s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.birthday-text {
+    max-width: 600px;
+    margin: 25px auto;
+    color: #666;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+    position: absolute;
+    font-size: 65px;
+    animation: balloonFloat 4s ease-in-out infinite;
+}
+
+.b1 {
+    left: 8%;
+    top: 20%;
+}
+
+.b2 {
+    left: 85%;
+    top: 25%;
+    animation-delay: 1s;
+}
+
+.b3 {
+    left: 15%;
+    bottom: 10%;
+    animation-delay: 2s;
+}
+
+.b4 {
+    right: 8%;
+    bottom: 12%;
+    animation-delay: 3s;
+}
+
+@keyframes balloonFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    animation: confettiFall 5s linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   PAGE 3 - LETTER
+========================= */
+
+.letter-page {
+    background: linear-gradient(135deg, #fbeaff, #ffe6ef);
+    padding: 30px;
+}
+
+.letter-card {
+    width: min(90%, 850px);
+    min-height: 550px;
+    padding: 50px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 25px 60px rgba(100, 50, 100, 0.15);
+    text-align: center;
+}
+
+.envelope {
+    font-size: 65px;
+    margin-bottom: 10px;
+    animation: envelopeBounce 2s infinite;
+}
+
+@keyframes envelopeBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.letter-card h1 {
+    color: #d63384;
+    margin-bottom: 30px;
+    font-size: 38px;
+}
+
+.letter-text {
+    text-align: left;
+    white-space: pre-line;
+    color: #555;
+    font-size: 17px;
+    line-height: 2;
+    min-height: 300px;
+}
+
+
+/* =========================
+   PAGE 4 - MEMORY PAGE
+========================= */
+
+.memory-page {
+    background:
+        radial-gradient(circle at 10% 10%, #ffe3ed, transparent 30%),
+        radial-gradient(circle at 90% 90%, #e5d0ff, transparent 30%),
+        linear-gradient(135deg, #fff5f8, #f7ecff);
+
+    padding: 80px 25px;
+
+    /*
+       Important:
+       Memory page needs to scroll because
+       the photos are now larger.
+    */
+    min-height: 100vh;
+    overflow-y: auto;
+    align-items: flex-start;
+}
+
+.memory-container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.section-small {
+    color: #c2185b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.memory-container h1 {
+    color: #8e2de2;
+    font-size: clamp(38px, 6vw, 58px);
+    margin: 10px 0;
+}
+
+.memory-intro {
+    color: #666;
+    margin: 10px auto 45px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   MEMORY GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+
+    /*
+       Two large cards per row on desktop.
+    */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 35px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   MEMORY CARD
+========================= */
+
+.memory-card {
+    background: white;
+
+    /*
+       Increased padding.
+    */
+    padding: 20px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   MEMORY PHOTO
+========================= */
+
+.memory-card img {
+
+    /*
+       Increased width.
+    */
+    width: 100%;
+
+    /*
+       IMPORTANT:
+       Increased from 230px / 270px
+       to 420px.
+    */
+    height: 420px;
+
+    /*
+       Contain ensures the WHOLE photo
+       is visible instead of cutting it.
+    */
+    object-fit: contain;
+
+    /*
+       Background for portrait photos.
+    */
+    background: #f7f7f7;
+
+    border-radius: 18px;
+
+    display: block;
+
+    /*
+       Prevents strange image stretching.
+    */
+    max-width: 100%;
+}
+
+
+/* =========================
+   MEMORY TITLE
+========================= */
+
+.memory-card h3 {
+    color: #d63384;
+
+    margin:
+        20px 0
+        10px;
+
+    font-size: 23px;
+}
+
+
+/* =========================
+   MEMORY DESCRIPTION
+========================= */
+
+.memory-card p {
+    color: #666;
+
+    line-height: 1.7;
+
+    padding:
+        0 12px
+        12px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   MEMORY NUMBER
+========================= */
+
+.memory-number {
+    position: absolute;
+
+    top: 32px;
+    left: 32px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    color: #d63384;
+
+    font-weight: bold;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.18);
+
+    z-index: 2;
+}
+
+
+/* =========================
+   MEMORY ENDING
+========================= */
+
+.memory-ending {
+    margin:
+        45px auto
+        10px;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    color: #8e2de2;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    max-width: 850px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   PAGE 5 - SPECIAL
+========================= */
+
+.special-page {
+    background: linear-gradient(135deg, #fff0f6, #eee1ff);
+
+    padding:
+        70px 25px;
+
+    overflow-y: auto;
+
+    align-items: flex-start;
+}
+
+.special-container {
+    width: 100%;
+    max-width: 1050px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.special-container h1 {
+    color: #8e2de2;
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.special-container > p {
+    color: #666;
+}
+
+.reason-grid {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.reason-card {
+    height: 230px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transition:
+        transform 0.7s;
+
+    transform-style:
+        preserve-3d;
+}
+
+.reason-card.flipped
+.card-inner {
+    transform:
+        rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+
+    inset: 0;
+
+    backface-visibility: hidden;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 25px;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: white;
+
+    font-size: 55px;
+}
+
+.card-front span {
+    color: #d63384;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+.card-back {
+    background:
+        linear-gradient(
+            135deg,
+            #d63384,
+            #8e2de2
+        );
+
+    color: white;
+
+    transform:
+        rotateY(180deg);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   PAGE 6 - GIFT
+========================= */
+
+.gift-page {
+    background:
+        radial-gradient(
+            circle at center,
+            #fff1f7,
+            #eadcff
+        );
+
+    text-align: center;
+}
+
+.gift-container {
+    text-align: center;
+}
+
+.gift-container h1 {
+    color: #8e2de2;
+
+    font-size: 50px;
+
+    margin: 10px 0;
+}
+
+.gift-container > p {
+    color: #666;
+}
+
+.gift-box {
+    width: 180px;
+    height: 180px;
+
+    position: relative;
+
+    margin:
+        70px auto
+        25px;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.gift-box:hover {
+    transform: scale(1.08);
+}
+
+.gift-body {
+    position: absolute;
+
+    width: 150px;
+    height: 120px;
+
+    left: 15px;
+    bottom: 0;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d6d,
+            #d63384
+        );
+
+    box-shadow:
+        0 20px 30px
+        rgba(214, 51, 132, 0.3);
+}
+
+.gift-lid {
+    position: absolute;
+
+    width: 175px;
+    height: 45px;
+
+    left: 2px;
+    top: 35px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b85,
+            #c2185b
+        );
+
+    z-index: 3;
+
+    transition: 0.7s;
+}
+
+.gift-ribbon {
+    position: absolute;
+
+    width: 28px;
+    height: 120px;
+
+    background: #ffd166;
+
+    left: 61px;
+    top: 0;
+}
+
+.gift-box.open
+.gift-lid {
+    transform:
+        translateY(-80px)
+        rotate(-10deg);
+}
+
+.gift-box.open {
+    animation:
+        giftOpen 0.8s ease;
+}
+
+@keyframes giftOpen {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+#giftHint {
+    color: #d63384;
+    font-weight: bold;
+}
+
+
+/* =========================
+   PAGE 7 - FINAL
+========================= */
+
+.final-page {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #40205f,
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #12051d,
+            #230d35,
+            #08030c
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding:
+        80px 25px;
+
+    overflow-y: auto;
+
+    align-items: flex-start;
+}
+
+.final-content {
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding-bottom: 50px;
+}
+
+.moon {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+    animation:
+        moonFloat 3s
+        ease-in-out infinite;
+}
+
+@keyframes moonFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+
+}
+
+.final-content h1 {
+    font-size:
+        clamp(
+            45px,
+            9vw,
+            90px
+        );
+
+    color: #ffd6e7;
+
+    line-height: 0.95;
+}
+
+.final-content h2 {
+    font-size: 50px;
+
+    color: #ff6b9d;
+
+    margin:
+        20px 0
+        30px;
+}
+
+.final-photo {
+    width: 270px;
+    height: 270px;
+
+    margin: auto;
+
+    padding: 7px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d6d,
+            #c77dff
+        );
+}
+
+.final-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        4px solid white;
+}
+
+.final-content > p {
+    max-width: 650px;
+
+    margin:
+        25px auto;
+
+    line-height: 1.8;
+
+    color: #eadff1;
+
+    font-size: 17px;
+}
+
+.final-message {
+    color: #ffb8d1 !important;
+
+    font-size:
+        19px !important;
+}
+
+.big-heart {
+    font-size: 75px;
+
+    animation:
+        heartBeat 1.2s infinite;
+
+    margin: 25px 0;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.2);
+    }
+
+}
+
+.final-content h3 {
+    font-size: 21px;
+
+    color: #ffd6e7;
+}
+
+.signature {
+    font-style: italic;
+
+    color:
+        #cdb5d9 !important;
+}
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
+#fireworks {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .memory-card img {
+        height: 360px;
+    }
+
+    .reason-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .page {
+        min-height: 100vh;
+    }
+
+
+    /* PASSWORD */
+
+    .password-card {
+        width: 92%;
+
+        padding:
+            35px 22px;
+    }
+
+    .password-card h1 {
+        font-size: 30px;
+    }
+
+
+    /* BIRTHDAY */
+
+    .birthday-content {
+        padding:
+            60px 15px
+            30px;
+    }
+
+    .photo-frame {
+        width: 220px;
+        height: 220px;
+    }
+
+    .birthday-content h2 {
+        font-size: 36px;
+    }
+
+    .balloon {
+        font-size: 45px;
+    }
+
+
+    /* LETTER */
+
+    .letter-card {
+        width: 95%;
+
+        padding:
+            30px 20px;
+
+        min-height: 500px;
+    }
+
+    .letter-card h1 {
+        font-size: 30px;
+    }
+
+    .letter-text {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    /* MEMORY PAGE */
+
+    .memory-page {
+        padding:
+            65px 15px
+            40px;
+
+        align-items:
+            flex-start;
+    }
+
+    .memory-container {
+        padding-top: 10px;
+    }
+
+    .memory-container h1 {
+        font-size: 36px;
+    }
+
+    .memory-intro {
+        font-size: 15px;
+
+        margin-bottom:
+            30px;
+    }
+
+
+    /*
+       ONE PHOTO PER ROW
+       ON MOBILE.
+    */
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    /*
+       LARGE MOBILE PHOTO.
+    */
+
+    .memory-card {
+        padding: 15px;
+
+        border-radius: 22px;
+    }
+
+
+    .memory-card img {
+
+        width: 100%;
+
+        /*
+           Increased mobile size.
+        */
+        height: 480px;
+
+        /*
+           Entire image remains visible.
+        */
+        object-fit: contain;
+
+        background: #f7f7f7;
+
+        border-radius: 16px;
+    }
+
+
+    .memory-card h3 {
+        font-size: 21px;
+
+        margin:
+            17px 0
+            8px;
+    }
+
+    .memory-card p {
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+
+    .memory-number {
+        width: 48px;
+        height: 48px;
+
+        top: 25px;
+        left: 25px;
+    }
+
+
+    .memory-ending {
+        font-size: 18px;
+
+        padding: 22px;
+
+        margin-top: 35px;
+    }
+
+
+    /* SPECIAL */
+
+    .special-page {
+        padding:
+            60px 15px
+            40px;
+    }
+
+    .special-container h1 {
+        font-size: 35px;
+    }
+
+    .reason-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .reason-card {
+        height: 220px;
+    }
+
+
+    /* GIFT */
+
+    .gift-container h1 {
+        font-size: 38px;
+    }
+
+
+    /* FINAL */
+
+    .final-page {
+        padding:
+            70px 18px
+            40px;
+    }
+
+    .final-content h2 {
+        font-size: 38px;
+    }
+
+    .final-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .final-content > p {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .memory-card img {
+        height: 400px;
+    }
+
+    .photo-frame {
+        width: 190px;
+        height: 190px;
+    }
+
+    .birthday-content h2 {
+        font-size: 32px;
+    }
+
+    .birthday-title {
+        font-size: 52px;
+    }
+
+    .main-btn {
+        padding:
+            13px 22px;
+
+        font-size: 14px;
+    }
+
+}
